@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: caotico-container
-        image: sdeles/imagemcaotica:v7
+        image: sdeles/simuladordocaos:v2
         ports:
         - containerPort: 8080
 ---
