@@ -53,9 +53,11 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+      name: http  # Nome único para a porta do jarleychat
     - protocol: TCP
       port: 8081  # Porta externa para o caotico
       targetPort: 8080  # Porta interna no pod caotico
+      name: caotico-port  # Nome único para a porta do caotico
   type: LoadBalancer
 ---
 apiVersion: v1
@@ -69,4 +71,5 @@ spec:
     - protocol: TCP
       port: 8081  # Porta exposta para o caotico
       targetPort: 8080
+      name: caotico-port
   type: ClusterIP  # Usado internamente no cluster
