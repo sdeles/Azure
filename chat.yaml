@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: jarleychat-container
-        image: sdeles/jarleychat:latest
+        image: sdeles/conversao-temperatura:latest
         ports:
         - containerPort: 8080
 ---
