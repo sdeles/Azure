@@ -61,3 +61,17 @@ spec:
       selector:
         app: caotico  # Direciona a porta 8081 para o deployment caotico
   type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: caotico-service
+spec:
+  selector:
+    app: caotico
+  ports:
+    - protocol: TCP
+      port: 8081  # Porta exposta para o caotico
+      targetPort: 8080
+      name: caotico-port
+  type: ClusterIP  # Usado internamente no cluster
