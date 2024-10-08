@@ -47,19 +47,17 @@ kind: Service
 metadata:
   name: shared-loadbalancer-service
 spec:
+  selector:
+        app: caotico  # Direciona a porta 8081 para o deployment caotico
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
       name: http
-      selector:
-        app: jarleychat  # Direciona a porta 80 para o deployment jarleychat
     - protocol: TCP
       port: 8081  # Porta externa para caotico
       targetPort: 8080
       name: caotico-port
-      selector:
-        app: caotico  # Direciona a porta 8081 para o deployment caotico
   type: LoadBalancer
 ---
 apiVersion: v1
